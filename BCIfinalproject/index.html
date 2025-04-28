@@ -1,0 +1,141 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>From Touch to Thought: Exploring Brain-Computer Interfaces in Daily Tasks</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+
+<div class="navbar">
+    <a href="#">Home</a>
+    <a href="#about">About</a>
+    <a href="#help">Help</a>
+    <a href="#contact us">Contact Us</a>
+    <a href="#know more">Know More</a>
+    <a href="#location">Location</a>
+    <a href="#details">Details</a>
+</div>
+
+<img src="projectimage.jpg" alt="Brain-Computer Interface image" style="width:600px; padding-top: 20px; height:auto; border-radius:10px;">
+
+<div style="text-align: center; margin-top: 30px; margin-bottom: 20px;">
+    <h2 style="color: #2e7d32;">Experience the Power of Thought</h2>
+    <p style="font-size: 18px; color: #555;">
+        Our system captures brainwave patterns and translates them into real-world actions.<br>
+        From turning on lights to moving robotic arms — control the future with your mind.
+    </p>
+</div>
+
+
+
+<body>
+    <!-- Login Button at the Top Right -->
+    <button class="login-btn" onclick="showLoginPanel()">Login</button>
+
+    <!-- Modal for Login Panel -->
+    <div class="login-modal" id="loginModal">
+        <div class="login-panel">
+            <h2>Patient Login</h2>
+            <form id="loginForm">
+                <input type="text" id="username" placeholder="Username" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <button type="submit">Login</button>
+                <br><br>
+                <button type="button" onclick="showForgotUsernamePanel()" style="margin-top:10px;">Forgot Username?</button>
+            </form>
+            <p id="loginMessage"></p>
+            <button class="close-btn" onclick="closeLoginPanel()">Close</button>
+        </div>
+    </div>
+
+    <!-- Forgot Username Modal -->
+<div id="forgotUsernameModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.5); align-items:center; justify-content:center;">
+    <div style="background:white; padding:20px; border-radius:8px; width:300px;">
+        <h3>Forgot Username</h3>
+        <form id="forgotUsernameForm">
+            <input type="email" id="forgotEmail" placeholder="Enter your email" required style="width:100%; padding:8px; margin-bottom:10px;"><br>
+            <button type="submit" style="width:100%; padding:8px;">Recover Username</button><br><br>
+            <p id="forgotUsernameMessage" style="color:red;"></p>
+            <button type="button" onclick="closeForgotUsernamePanel()" style="width:100%; padding:8px;">Cancel</button>
+        </form>
+    </div>
+</div>
+
+
+    <div class="container">
+        <div class="wave-section">
+            <canvas id="brainwaveChart"></canvas>
+        </div>
+        <div class="controls">
+            <button onclick="simulateControl('Light ON')">Turn Light ON</button>
+            <button onclick="simulateControl('Light OFF')">Turn Light OFF</button>
+            <button onclick="simulateControl('Move Robot Arm')">Move Robot Arm</button>
+        </div>
+        <!-- Scrolling Text Section -->
+<div class="scrolling-text-container">
+    <div class="scrolling-text">
+        <span>Stay healthy, live longer, and make your life more productive with Brain-Computer Interfaces!</span>
+        <span>Embrace technology for a healthier lifestyle and a more productive future!</span>
+        <span>Empower your brain, enhance your life with cutting-edge technology!</span>
+    </div>
+</div>
+
+<!-- Get in Touch Form Section -->
+<section id="contact-form-section" style="background-color: #d4f5d1; padding: 50px 20px;">
+    <h2 style="text-align: center; font-size: 32px; margin-bottom: 30px;">Get in Contact</h2>
+
+    <form class="contact-form" style="max-width: 700px; margin: auto;">
+        <div class="form-row">
+            <div class="form-group">
+                <label>First Name:</label>
+                <input type="text" name="firstName" required>
+            </div>
+            <div class="form-group">
+                <label>Last Name:</label>
+                <input type="text" name="lastName" required>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label>Phone Number:</label>
+                <input type="tel" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label>Email:</label>
+                <input type="email" name="email" required>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Symptoms:</label>
+            <textarea name="symptoms" rows="3" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label>Goal to Achieve Good Habits:</label>
+            <textarea name="goals" rows="3" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label>Address:</label>
+            <textarea name="address" rows="3" required></textarea>
+        </div>
+
+        <div style="text-align: center; margin-top: 20px;">
+            <button type="submit" class="submit-btn">Submit</button>
+        </div>
+    </form>
+</section>
+
+
+        <div class="log" id="log"></div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
